@@ -1,30 +1,24 @@
-// import FirstExample from "./FirstExample";
 import React, { useReducer } from "react";
-
-const ACTIONS = {
-  INCREMENT: "increment",
-  DECREMENT: "decrement",
-};
 
 function reducer(state, action) {
   switch (action.type) {
-    case ACTIONS.INCREMENT:
+    case "increment":
       return { count: state.count + 1 };
-    case ACTIONS.DECREMENT:
+    case "decrement":
       return { count: state.count - 1 };
     default:
       return state;
   }
 }
 
-function App() {
+function SecondExample() {
   const [state, dispatch] = useReducer(reducer, { count: 0 });
 
   function increment() {
-    dispatch({ type: ACTIONS.INCREMENT });
+    dispatch({ type: "increment" });
   }
   function decrement() {
-    dispatch({ type: ACTIONS.DECREMENT });
+    dispatch({ type: "decrement" });
   }
 
   return (
@@ -36,4 +30,4 @@ function App() {
   );
 }
 
-export default App;
+export default SecondExample;
